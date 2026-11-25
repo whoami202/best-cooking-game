@@ -1,0 +1,55 @@
+/* The Lantern Kitchen — page chrome around the canvas. */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #2e2118;
+  color: #fff3d6;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+#wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px;
+}
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background: #b98a5e;
+}
+#help {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 10px 0 0;
+}
+#test-results {
+  white-space: pre;
+  font-family: monospace;
+  font-size: 12px;
+  color: #7bc96f;
+}
+#test-results:empty {
+  display: none;
+}
+/* Screenshot mode (?shot=N): the canvas fills the viewport exactly, so a
+   1280x720 headless capture is the game and nothing else. */
+body.shot {
+  overflow: hidden;
+}
+body.shot #wrap {
+  max-width: none;
+  padding: 0;
+}
+body.shot #game {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.shot #help {
+  display: none;
+}
